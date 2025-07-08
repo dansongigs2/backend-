@@ -42,10 +42,10 @@ Message: ${message}`
 
   // Send email
   try { 
+     await transporter.sendMail(mailOptions);
     console.log('Attempting to send email...');
   const info = await transporter.sendMail(mailOptions);
   console.log('Email sent:', info);
-    await transporter.sendMail(mailOptions);
     res.send('<h2>Thank you for reaching out! I will get back to you soon.</h2>');
   } catch (error) {
     console.error('Error sending email:', error);
